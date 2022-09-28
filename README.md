@@ -1,7 +1,5 @@
 # locationfinder
 
-# find location of airports across [cities, towns, country, longitude and latitude etc]
-
 ## Getting Started
 
 ### Clone the project
