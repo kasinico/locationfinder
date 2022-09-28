@@ -1,0 +1,3 @@
+# locationfinder
+
+run: pyairports aaa
