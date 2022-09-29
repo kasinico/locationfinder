@@ -2,6 +2,8 @@ from pkg_resources import resource_string
 from collections import namedtuple
 from string import ascii_uppercase
 import json
+import os
+import sys
 
 ASCII_UPPERCASE = set(ascii_uppercase)
 Airport = namedtuple('Airport', ['name', 'city', 'country', 'iata', 'icao', 'lat', 'lon', 'alt', 'tz', 'dst', 'tzdb'])
@@ -46,16 +48,16 @@ class Airports(object):
         }
 
     @staticmethod
-    def _validate(country):
-        if not isinstance(country, (str, 'utf-8')):
+    def _validate(iata):
+        if not isinstance(iata, (str, 'utf-8')):
             raise ValueError("iata must be a string, it is a {0}".format(type(country)))
         country = country.strip().upper()
-        if not len(country) == 3:
+        if not len(iata) == 3:
             raise ValueError("iata must be three characters")
-        return country
+        return iata
 
-    def airport_iata(self, country):
-        return self.lookup(country, self.airports)
+    def airport_iata(self, iata):
+        return self.lookup(iata, self.airports)
 
     def other_iata(self, iata):
         return self.lookup(iata, self.other)
