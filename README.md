@@ -1,7 +1,4 @@
 # locationfinder
-
-## find location across cities, towns, airports etc
-
 ## Getting Started
 
 ### Clone the project
